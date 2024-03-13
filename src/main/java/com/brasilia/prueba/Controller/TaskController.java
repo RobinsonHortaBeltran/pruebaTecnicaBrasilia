@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/task")
@@ -60,7 +61,8 @@ public class TaskController {
     }
 
     @PutMapping("/{taskId}/status")
-    public ResponseEntity<String> updateTaskStatus(@PathVariable Long taskId, @RequestParam String newStatus) {
+    public ResponseEntity<?> updateTaskStatus(@PathVariable Long taskId, @RequestBody Map<String, String> requestBody) {
+        String newStatus = requestBody.get("newStatus");
         try {
             taskService.changeTaskStatus(taskId, newStatus);
             return ResponseEntity.ok("Estado de la tarea actualizado correctamente");
