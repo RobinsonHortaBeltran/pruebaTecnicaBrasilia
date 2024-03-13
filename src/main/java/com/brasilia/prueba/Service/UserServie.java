@@ -15,10 +15,14 @@ import java.util.stream.Collectors;
 public class UserServie {
 
     @Autowired
-    IUserRepository userRepository;
+    private final IUserRepository userRepository;
 
     @Autowired
     TaskService taskService;
+
+    public UserServie(IUserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     public List<UserDto> getAllUsers() {
         return this.userRepository.findAll().stream()

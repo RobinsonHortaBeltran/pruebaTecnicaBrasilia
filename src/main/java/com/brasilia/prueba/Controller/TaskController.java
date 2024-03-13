@@ -28,7 +28,7 @@ public class TaskController {
     }
 
     @PostMapping
-    public TasksEntity saveTask(@RequestBody TaskDto task){
+    public TasksEntity saveTask(@RequestBody TasksEntity task){
         return this.taskService.saveTask(task);
     }
 

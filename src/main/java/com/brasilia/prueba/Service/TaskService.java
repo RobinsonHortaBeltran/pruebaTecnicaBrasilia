@@ -1,7 +1,6 @@
 package com.brasilia.prueba.Service;
 
 import com.brasilia.prueba.Dto.TaskDto;
-import com.brasilia.prueba.Dto.UserDto;
 import com.brasilia.prueba.Entity.TasksEntity;
 import com.brasilia.prueba.Entity.UserEntity;
 import com.brasilia.prueba.Repository.ITaskRepository;
@@ -35,16 +34,12 @@ public class TaskService {
         return this.convertToDto(task);
     }
 
-    public TasksEntity saveTask(TaskDto taskDto) {
-        UserServie userService = new UserServie();
-            TasksEntity task = this.convertToEntity(taskDto);
-        task.setTitle(taskDto.getTitle());
-        task.setDescription(taskDto.getDescription());
-        task.setStatus(taskDto.getStatus());
-        UserDto user = userService.getUserById(taskDto.getUserId()).orElse(null);
-
-        assert user != null;
-        task.setUser(userServie.convertToEntity(user));
+    public TasksEntity saveTask(TasksEntity task) {
+        UserServie userService = new UserServie(userRepository);
+        task.setTitle(task.getTitle());
+        task.setDescription(task.getDescription());
+        task.setStatus(task.getStatus());
+        task.setUser(task.getUser());
 
         return this.taskRepository.save(task);
     }

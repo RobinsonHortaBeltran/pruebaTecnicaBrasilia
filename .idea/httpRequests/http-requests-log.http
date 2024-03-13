@@ -1,0 +1,161 @@
+GET http://localhost:8000/api/user
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-03-13T171601.200.json
+
+###
+
+GET http://localhost:8000/api/task
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-03-13T171550.200.json
+
+###
+
+POST http://localhost:8000/api/task
+Content-Type: application/json
+Content-Length: 135
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "description": "DEscripción de la tarea",
+  "status": "pendiente",
+  "title": "Título de la tarea",
+  "user": {
+    "id": 1
+  }
+}
+
+<> 2024-03-13T171530.200.json
+
+###
+
+POST http://localhost:8000/api/user/
+Content-Type: application/json
+Content-Length: 26
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "John Doe 2"
+}
+
+<> 2024-03-13T171524.200.json
+
+###
+
+POST http://localhost:8000/api/task
+Content-Type: application/json
+Content-Length: 149
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "description": "DEscripción de la tarea",
+      "status": "pendiente",
+          "title": "Título de la tarea",
+  "user": {
+    "id": 1
+  }
+}
+
+<> 2024-03-13T171313.500.json
+
+###
+
+POST http://localhost:8000/api/task
+Content-Type: application/json
+Content-Length: 149
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "description": "DEscripción de la tarea",
+      "status": "pendiente",
+          "title": "Título de la tarea",
+  "user": {
+    "id": 1
+  }
+}
+
+<> 2024-03-13T171051.500.json
+
+###
+
+POST http://localhost:8000/api/user/
+Content-Type: application/json
+Content-Length: 26
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "John Doe 2"
+}
+
+<> 2024-03-13T171044.200.json
+
+###
+
+POST http://localhost:8000/api/task
+Content-Type: application/json
+Content-Length: 135
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "description": "DEscripción de la tarea",
+  "status": "pendiente",
+  "title": "Título de la tarea",
+  "user": {
+    "id": 1
+  }
+}
+
+<> 2024-03-13T170523.500.json
+
+###
+
+GET http://localhost:8000/api/task
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-03-13T170505.200.json
+
+###
+
+GET http://localhost:8000/api/task
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-03-13T170427.200.json
+
+###
+
+POST http://localhost:8000/api/user/
+Content-Type: application/json
+Content-Length: 26
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "John Doe 2"
+}
+
+<> 2024-03-13T170412.200.json
+
+###
+
