@@ -5,12 +5,19 @@ lista de usuarios y sus tareas asociadas. Cada usuario tiene un nombre de usuari
 único y una lista de tareas. Cada tarea tiene un título, una descripción y un estado 
 (pendiente o completada). La aplicación debe ser capaz de realizar las siguientes 
 operaciones:
+
 • Crear un nuevo usuario.
+
 • Obtener la lista de todos los usuarios.
+
 • Obtener un usuario por su ID.
+
 • Crear una nueva tarea para un usuario específico.
+
 • Obtener la lista de todas las tareas de un usuario.
+
 • Marcar una tarea como completada para un usuario específico.
+
 • Eliminar una tarea para un usuario específico.
 
 Se desarrollo en el IDE INTELIJ
