@@ -5,28 +5,20 @@ import lombok.Data;
 
 @Data
 public class TaskDto {
+    private Long id;
+    private String title;
+    private String description;
+    private String status;
+    private Long userId; // Para representar el ID del usuario asociado a esta tarea
 
-    //Id is the primary key of the table
-        private Long id;
-        //Column title is the title of the column in the table
-        @JsonProperty("title")
-        private String title;
+    public TaskDto() {
+    }
 
-        //Column description is the description of the column in the table
-        @JsonProperty("description")
-        private String description;
-
-        //Column status is the status of the column in the table
-        @JsonProperty("status")
-        private String status;
-
-        public TaskDto() {
-        }
-
-        public TaskDto(Long id, String title, String description, String status) {
-            this.id = id;
-            this.title = title;
-            this.description = description;
-            this.status = status;
-        }
+    public TaskDto(Long id, String title, String description, String status, Long userId) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.status = status;
+        this.userId = userId;
+    }
 }

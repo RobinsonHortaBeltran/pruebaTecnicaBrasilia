@@ -1,8 +1,10 @@
 package com.brasilia.prueba.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -12,7 +14,7 @@ public class UserEntity {
 
     //Id is the primary key of the table
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Long id;
 
     //Column name is the name of the column in the table
@@ -20,8 +22,8 @@ public class UserEntity {
     private String name;
 
     //Relation one to many with the tasks table
-    @OneToMany(mappedBy = "user")
-    private List<TasksEntity> tasks;
-
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnore // Para evitar la recursión infinita en la serialización JSON
+    private List<TasksEntity> tasks = new ArrayList<>();
 
 }
