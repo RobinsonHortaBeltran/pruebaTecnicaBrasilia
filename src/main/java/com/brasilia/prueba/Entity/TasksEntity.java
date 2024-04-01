@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
+/**
+ * The type Tasks entity.
+ */
 @Entity
 @Table(name = "tasks")
 @Data

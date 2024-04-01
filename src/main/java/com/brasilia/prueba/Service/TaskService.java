@@ -12,28 +12,57 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * The type Task service.
+ */
 @Service
 public class TaskService {
 
+    /**
+     * The Task repository.
+     */
     @Autowired
     ITaskRepository taskRepository;
+    /**
+     * The User repository.
+     */
     IUserRepository userRepository;
+    /**
+     * The User servie.
+     */
     @Autowired
     UserServie userServie;
 
 
+    /**
+     * Gets all tasks.
+     *
+     * @return the all tasks
+     */
     public List<TaskDto> getAllTasks() {
         return this.taskRepository.findAll().stream()
                 .map(this::convertToDto)
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Gets task by id.
+     *
+     * @param id the id
+     * @return the task by id
+     */
     public TaskDto getTaskById(Long id) {
         TasksEntity task = this.taskRepository.findById(id).orElse(null);
         assert task != null;
         return this.convertToDto(task);
     }
 
+    /**
+     * Save task tasks entity.
+     *
+     * @param task the task
+     * @return the tasks entity
+     */
     public TasksEntity saveTask(TasksEntity task) {
         UserServie userService = new UserServie(userRepository);
         task.setTitle(task.getTitle());
@@ -44,6 +73,13 @@ public class TaskService {
         return this.taskRepository.save(task);
     }
 
+    /**
+     * Update task task dto.
+     *
+     * @param request the request
+     * @param id      the id
+     * @return the task dto
+     */
     public TaskDto updateTask(TaskDto request, Long id) {
         TasksEntity task = this.taskRepository.findById(id).orElse(null);
         assert task != null;
@@ -53,6 +89,12 @@ public class TaskService {
         return this.convertToDto(this.taskRepository.save(task));
     }
 
+    /**
+     * Delete task boolean.
+     *
+     * @param id the id
+     * @return the boolean
+     */
     public boolean deleteTask(Long id) {
         try {
             this.taskRepository.deleteById(id);
@@ -62,6 +104,13 @@ public class TaskService {
         }
     }
 
+    /**
+     * Delete task user id and task id.
+     *
+     * @param userId the user id
+     * @param taskId the task id
+     * @throws IllegalAccessException the illegal access exception
+     */
     public void deleteTaskUserIdAndTaskId(Long userId, Long taskId) throws IllegalAccessException {
         try {
             TasksEntity task = this.taskRepository.findById(taskId).orElse(null);
@@ -75,6 +124,13 @@ public class TaskService {
         }
     }
 
+    /**
+     * Change task status.
+     *
+     * @param taskId    the task id
+     * @param newStatus the new status
+     * @throws IllegalAccessException the illegal access exception
+     */
     public void changeTaskStatus(Long taskId, String newStatus) throws IllegalAccessException {
         try {
         TasksEntity task = taskRepository.findById(taskId).orElse(null);
@@ -88,6 +144,13 @@ public class TaskService {
             throw new IllegalAccessException("Error al cambiar el estado de la tarea");
         }
     }
+
+    /**
+     * Convert to dto task dto.
+     *
+     * @param task the task
+     * @return the task dto
+     */
     public TaskDto convertToDto(TasksEntity task) {
         TaskDto taskDto = new TaskDto();
         taskDto.setId(task.getId());
@@ -98,6 +161,12 @@ public class TaskService {
         return taskDto;
     }
 
+    /**
+     * Convert to entity tasks entity.
+     *
+     * @param taskDto the task dto
+     * @return the tasks entity
+     */
     public TasksEntity convertToEntity(TaskDto taskDto) {
         TasksEntity task = new TasksEntity();
         //task.setId(taskDto.getId());

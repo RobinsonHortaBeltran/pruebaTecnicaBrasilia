@@ -1,3 +1,115 @@
+GET http://localhost:8000/api/user
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-03-13T180130.200.json
+
+###
+
+PUT http://localhost:8000/api/task/3/status
+Content-Type: application/json
+Content-Length: 25
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "newStatus": "done"
+}
+
+<> 2024-03-13T180125.200.txt
+
+###
+
+GET http://localhost:8000/api/user
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-03-13T180059.200.json
+
+###
+
+POST http://localhost:8000/api/task
+Content-Type: application/json
+Content-Length: 143
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user": {
+    "id": 2
+  },
+  "title": "Comprar leche",
+  "description": "Tiene que comprar leche para el desayuno",
+  "status": "pending"
+}
+
+<> 2024-03-13T180047.200.json
+
+###
+
+POST http://localhost:8000/api/task
+Content-Type: application/json
+Content-Length: 143
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user": {
+    "id": 1
+  },
+  "title": "Comprar leche",
+  "description": "Tiene que comprar leche para el desayuno",
+  "status": "pending"
+}
+
+<> 2024-03-13T180014.200.json
+
+###
+
+GET http://localhost:8000/api/user
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-03-13T175917.200.json
+
+###
+
+POST http://localhost:8000/api/user/
+Content-Type: application/json
+Content-Length: 27
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Laura Horta"
+}
+
+<> 2024-03-13T175851.200.json
+
+###
+
+POST http://localhost:8000/api/user
+Content-Type: application/json
+Content-Length: 27
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Laura Horta"
+}
+
+<> 2024-03-13T175844.405.json
+
+###
+
 PUT http://localhost:8000/api/task/1/status
 Content-Type: application/json
 Content-Length: 25

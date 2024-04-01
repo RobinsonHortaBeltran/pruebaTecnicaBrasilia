@@ -7,6 +7,9 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type User entity.
+ */
 @Entity
 @Table(name = "users")
 @Data
